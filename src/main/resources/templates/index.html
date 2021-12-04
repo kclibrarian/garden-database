@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+    <h2>Plant Database</h2>
+    <ul>
+        <li th:each="plant : ${plants}">
+            <a th:href="@{'/view/' + ${plant.id}}" th:text="${plant.name}"></a>
+        </li>
+    </ul>
+
+</div>
+
+</body>
+</html>
