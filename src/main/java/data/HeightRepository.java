@@ -1,9 +1,9 @@
 package data;
 
-import model.Month;
+import model.Height;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MonthRepository extends CrudRepository<Month, Integer> {
+public interface HeightRepository extends CrudRepository<Height, Integer> {
 }
