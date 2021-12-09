@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<p th:unless="${colors} and ${colors.size()}">no plants!</p>
+
+<div class="container body-content">
+    <h2>Colors</h2>
+    <ul>
+        <li th:each="color : ${colors}">
+            <a th:href="@{'/colors/view/' + ${color.id}}" th:text="${color.name}"></a>
+        </li>
+    </ul>
+    <a th:href="@{'/colors/add'}">Add Colors</a>
+
+</div>
+
+</body>
+</html>

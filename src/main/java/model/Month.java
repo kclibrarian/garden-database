@@ -10,19 +10,20 @@ import java.util.List;
 @Entity
 public class Month extends AbstractEntity {
     @NotNull
-    private String month;
+    private String location;
 
     @OneToMany
-    @JoinColumn(name = "plant_id")
+    @JoinColumn(name = "month_id")
     private List<Plant> plants = new ArrayList<>();
 
     //getters and setters
-    public String getMonth() {
-        return month;
+
+    public String getLocation() {
+        return location;
     }
 
-    public void setMonth(String month) {
-        this.month = month;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public List<Plant> getPlants() {

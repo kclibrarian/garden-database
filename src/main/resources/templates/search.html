@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
 </head>
 <body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<div class="container body-content">
+
+    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+
+    <form th:action="@{/search/results}" method = "post">
+        <h2>Search by:</h2>
+
+        <p>
+            <span th:each="column : ${columns}">
+                <input
+                        type="radio"
+                        name="searchType"
+                        th:id="${column.key}"
+                        th:value="${column.key}"
+                        th:checked="${column.key == 'all'}"/>
+                <label th:for="${column.key}" th:text="${column.value}"></label>
+            </span>
+
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+    </form>
+
+    <hr />
+
+
+    <table class="plant-listing">
+        <tr th:each="plant : ${plants}">
+            <td>
+                <p>
+                    Plant Id:
+                    <a th:href="@{'/view/' + ${plant.id}}" th:text="${plant.id}"></a>
+                </p>
+                <p th:text="${'Name: ' + plant.name}"></p>
+                <p>
+                    Month:
+                    <a th:href="@{'/month/view/' + ${plant.month.id}}" th:text="${plant.month.name}"></a>
+                </p>
+                <p>
+                    Color:
+                <ul th:each="color : ${plant.color}">
+                    <li>
+                        <a th:href="@{'/colors/view/' + ${color.id}}" th:text="${color.name}"></a>
+                    </li>
+                </ul>
+                </p>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
 
 </body>
 </html>

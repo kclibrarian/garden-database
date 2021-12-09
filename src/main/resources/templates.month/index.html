@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<p th:unless="${months} and ${months.size()}">no plants!</p>
+
+<div class="container body-content">
+    <h2>Months</h2>
+    <ul>
+        <li th:each="month : ${months}">
+            <a th:href="@{'/months/view/' + ${month.id}}" th:text="${month.name}"></a>
+        </li>
+    </ul>
+    <a th:href="@{'/months/add'}">Add Months</a>
+
+</div>
+
+</body>
+</html>

@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.HashMap;
 
-import java.util.HashMap;
-
 @Controller
 @RequestMapping(value="list")
 public class ListController {
@@ -37,16 +35,16 @@ public class ListController {
     public ListController () {
 
         columnChoices.put("all", "All");
-        columnChoices.put("month", "Month");
+        columnChoices.put("templates.month", "Month");
         columnChoices.put("color", "Color");
         columnChoices.put("height", "Height");
     }
 
     @RequestMapping("")
     public String list(Model model) {
-        model.addAttribute("colors", colorRepository.findAll());
+        model.addAttribute("color", colorRepository.findAll());
         model.addAttribute("height", heightRepository.findAll());
-        model.addAttribute("month", monthRepository.findAll());
+        model.addAttribute("templates.month", monthRepository.findAll());
 
         return "list";
     }
@@ -65,4 +63,15 @@ public class ListController {
 
         return "list-plants";
     }
+
+    public static HashMap<String, String> getColumnChoices() {
+        return columnChoices;
+    }
+
+    public static void setColumnChoices(HashMap<String, String> columnChoices) {
+        ListController.columnChoices = columnChoices;
+    }
+
+
+
 }

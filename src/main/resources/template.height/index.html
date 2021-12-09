@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+</head>
+<body>
+
+<div th:replace="fragments :: page-header"></div>
+
+<p th:unless="${skills} and ${skills.size()}">no plants!</p>
+
+<div class="container body-content">
+    <h2>Height</h2>
+    <ul>
+        <li th:each="height : ${heights}">
+            <a th:href="@{'/heights/view/' + ${height.id}}" th:text="${height.name}"></a>
+        </li>
+    </ul>
+    <a th:href="@{'/heights/add'}">Add Heights</a>
+
+</div>
+
+</body>
+</html>

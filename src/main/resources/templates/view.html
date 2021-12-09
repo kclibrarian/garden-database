@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Plant: ' + plant.name}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="plant-listing">
+    <p th:text="${'ID: ' + plant.id}"></p>
+    <p th:text="${'Name: ' + plant.name}"></p>
+    <p>
+        Plant Color: <a th:href="@{'/colors/view/' + ${plant.color.id}}" th:text="${plant.color.name}"></a>
+    </p>
+    <p> Blooming Month:
+    <ul>
+        <li th:each="month : ${plant.month}">
+            <a th:href="@{'/month/view/' + ${month.id}}" th:text="${month.name}"></a>
+        </li>
+    </ul>
+    </p>
+</div>
+
 
 </body>
 </html>

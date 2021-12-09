@@ -13,11 +13,12 @@ public class Plant extends AbstractEntity{
     private Month month;
 
     @ManyToOne
-    @JoinColumn(name = "height_id")
+    @JoinColumn(name = "height")
     private Height height;
 
     @ManyToMany
-    private java.util.List<Color> colors;
+    @JoinColumn(name = "color_id")
+    private List<Color> colors;
 
     public Plant() {
     }

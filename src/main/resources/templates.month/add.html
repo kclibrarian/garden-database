@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container  body-content">
+<h1>Add Plants</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <label th:for="name">Month Name</label>
+        <input class="form-control" th:field="${month.name}" />
+        <span th:errors="${month.name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="location">Month</label>
+        <input class="form-control" th:field="${month.location}" />
+        <span th:errors="${month.location}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add Month" />
+</form>
+
+</body>
+</html>

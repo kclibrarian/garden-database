@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import static controllers.ListController.columnChoices;
+
+
 @Controller
 @RequestMapping("search")
 public class SearchController {

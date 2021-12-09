@@ -3,16 +3,19 @@ package model;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Color extends AbstractEntity{
     @NotNull
-    private String color;
+    @Size(min=1, max=50)
+    private String description;
 
     @ManyToMany(mappedBy = "colors")
     @NotNull
+    @Size(min=1, max=50)
     private List<Plant> plants = new ArrayList<>();
 
     public Color() {
@@ -20,12 +23,14 @@ public class Color extends AbstractEntity{
     }
 
     //getters and setters
-    public String getColor() {
-        return color;
+
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public List<Plant> getPlants() {
@@ -35,5 +40,4 @@ public class Color extends AbstractEntity{
     public void setPlants(List<Plant> plants) {
         this.plants = plants;
     }
-
 }

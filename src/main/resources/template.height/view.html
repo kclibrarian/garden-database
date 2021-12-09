@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container  body-content">
+<h1 th:text="${'Height: ' + height.name}">Default Title</h1>
+
+<nav th:replace="fragments :: page-header"></nav>
+
+<div class="job-listing">
+    <p th:text="${'Name: ' + height.name}"></p>
+    <p th:text="${'Description: ' + height.description}"></p>
+    <p> Plants:
+        <ul>
+            <li th:each="job : ${height.plants}">
+                <a th:href="@{'/view/' + ${plant.id}}" th:text="${plant.name}"></a>
+            </li>
+        </ul>
+    </p>
+</div>

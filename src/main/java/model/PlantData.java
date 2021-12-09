@@ -6,7 +6,7 @@ public class PlantData {
 
 
     /**
-     * Returns the results of searching the Jobs data by field and search term.
+     * Returns the results of searching the Plants data by field and search term.
      *
      * For example, searching for employer "Enterprise" will include results
      * with "Enterprise Holdings, Inc".
@@ -56,11 +56,11 @@ public class PlantData {
     }
 
     /**
-     * Search all Job fields for the given term.
+     * Search all Plant fields for the given term.
      *
      * @param value The search term to look for.
-     * @param allPlants The list of jobs to search.
-     * @return      List of all jobs with at least one field containing the value.
+     * @param allPlants The list of plants to search.
+     * @return      List of all plants with at least one field containing the value.
      */
     public static ArrayList<Plant> findByValue(String value, Iterable<Plant> allPlants) {
         String lower_val = value.toLowerCase();

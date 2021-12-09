@@ -13,7 +13,7 @@ public class Height extends AbstractEntity{
     private String height;
 
     @OneToMany
-    @JoinColumn(name = "plant_id")
+    @JoinColumn(name = "height")
     private List<Plant> plants = new ArrayList<>();
 
     public String getHeight() {
