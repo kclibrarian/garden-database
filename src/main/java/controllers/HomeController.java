@@ -46,7 +46,6 @@ public class HomeController {
     @GetMapping("add")
     public String displayAddPlantForm(Model model) {
         model.addAttribute(new Plant());
-
         model.addAttribute("color", colorRepository.findAll());
         model.addAttribute("templates.month", monthRepository.findAll());
         model.addAttribute("height", heightRepository.findAll());

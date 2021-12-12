@@ -35,11 +35,11 @@
 
     <div class="form-group">
         <label th:for="height">Plant Height: </label>
-        <th:block th:each="height : ${height}">
-            <input type="checkbox" name="height" th:value="${height.id}">
+        <th:block th:each="height : ${heights}">
+            <input type="checkbox" name="heights" th:value="${height.id}">
             <label th:text="${height.name}"></label>
         </th:block>
-        <a th:href="@{'/height/add'}">Add Plant Height</a>
+        <a th:href="@{'/heights/add'}">Add Plant Height</a>
     </div>
 
     <input type="submit" value="Add Plant" />
