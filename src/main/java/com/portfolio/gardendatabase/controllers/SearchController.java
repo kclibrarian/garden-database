@@ -1,16 +1,14 @@
-package controllers;
+package com.portfolio.gardendatabase.controllers;
 
-import data.PlantRepository;
-import model.Plant;
-import model.PlantData;
+import com.portfolio.gardendatabase.data.PlantRepository;
+import com.portfolio.gardendatabase.models.Plant;
+import com.portfolio.gardendatabase.models.PlantData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import static controllers.ListController.columnChoices;
 
 
 @Controller
@@ -22,7 +20,7 @@ public class SearchController {
 
     @RequestMapping("")
     public String search(Model model) {
-        model.addAttribute("columns", columnChoices);
+        model.addAttribute("columns", ListController.columnChoices);
         return "search";
     }
 
@@ -34,8 +32,8 @@ public class SearchController {
         } else {
             plants = PlantData.findByColumnAndValue(searchType, searchTerm, plantRepository.findAll());
         }
-        model.addAttribute("columns", columnChoices);
-        model.addAttribute("title", "Plants with " + columnChoices.get(searchType) + ": " + searchTerm);
+        model.addAttribute("columns", ListController.columnChoices);
+        model.addAttribute("title", "Plants with " + ListController.columnChoices.get(searchType) + ": " + searchTerm);
         model.addAttribute("plants", plants);
 
         return "search";

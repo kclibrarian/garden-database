@@ -1,6 +1,6 @@
-package data;
+package com.portfolio.gardendatabase.data;
 
-import model.Month;
+import com.portfolio.gardendatabase.models.Month;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package model;
+package com.portfolio.gardendatabase.models;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Height extends AbstractEntity{
+public class Height extends AbstractEntity {
     @NotNull
     private String height;
 

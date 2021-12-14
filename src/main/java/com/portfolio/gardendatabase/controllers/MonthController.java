@@ -1,7 +1,7 @@
-package controllers;
+package com.portfolio.gardendatabase.controllers;
 
-import data.MonthRepository;
-import model.Month;
+import com.portfolio.gardendatabase.data.MonthRepository;
+import com.portfolio.gardendatabase.models.Month;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,14 +22,14 @@ public class MonthController {
 
     @GetMapping("")
     public String index(Model model) {
-        model.addAttribute("templates.month", monthRepository.findAll());
-        return "templates.month/index";
+        model.addAttribute("month", monthRepository.findAll());
+        return "month/index";
     }
 
     @GetMapping("add")
     public String displayAddMonthForm(Model model) {
         model.addAttribute(new Month());
-        return "templates.month/add";
+        return "month/add";
     }
 
     @PostMapping("add")
@@ -37,10 +37,10 @@ public class MonthController {
                                       Errors errors, Model model) {
 
         if (errors.hasErrors()) {
-            return "templates.month/add";
+            return "month/add";
         }
         monthRepository.save(newMonth);
-        model.addAttribute("templates.month", monthRepository.findAll());
+        model.addAttribute("month", monthRepository.findAll());
         return "redirect:";
     }
 
@@ -50,8 +50,8 @@ public class MonthController {
         Optional optMonth = monthRepository.findById(monthId);
         if (optMonth.isPresent()) {
             Month month = (Month) optMonth.get();
-            model.addAttribute("templates.month", month);
-            return "templates.month/view";
+            model.addAttribute("month", month);
+            return "month/view";
         } else {
             return "redirect:../";
         }

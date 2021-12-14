@@ -1,6 +1,6 @@
-package data;
+package com.portfolio.gardendatabase.data;
 
-import model.Plant;
+import com.portfolio.gardendatabase.models.Plant;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package model;
+package com.portfolio.gardendatabase.models;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;

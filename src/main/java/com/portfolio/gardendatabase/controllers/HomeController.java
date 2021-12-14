@@ -1,12 +1,12 @@
-package controllers;
+package com.portfolio.gardendatabase.controllers;
 
-import data.ColorRepository;
-import data.HeightRepository;
-import data.MonthRepository;
-import data.PlantRepository;
-import model.Color;
-import model.Month;
-import model.Plant;
+import com.portfolio.gardendatabase.data.ColorRepository;
+import com.portfolio.gardendatabase.data.HeightRepository;
+import com.portfolio.gardendatabase.data.MonthRepository;
+import com.portfolio.gardendatabase.data.PlantRepository;
+import com.portfolio.gardendatabase.models.Color;
+import com.portfolio.gardendatabase.models.Month;
+import com.portfolio.gardendatabase.models.Plant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +47,7 @@ public class HomeController {
     public String displayAddPlantForm(Model model) {
         model.addAttribute(new Plant());
         model.addAttribute("color", colorRepository.findAll());
-        model.addAttribute("templates.month", monthRepository.findAll());
+        model.addAttribute("month", monthRepository.findAll());
         model.addAttribute("height", heightRepository.findAll());
         return "add";
     }

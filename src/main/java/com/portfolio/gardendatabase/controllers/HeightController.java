@@ -1,7 +1,7 @@
-package controllers;
+package com.portfolio.gardendatabase.controllers;
 
-import data.HeightRepository;
-import model.Height;
+import com.portfolio.gardendatabase.data.HeightRepository;
+import com.portfolio.gardendatabase.models.Height;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +14,8 @@ import java.util.Optional;
 @Controller
 @RequestMapping("height")
 public class HeightController {
-    @Autowired
-    private HeightController heightController;
+//    @Autowired
+//    private HeightController heightController;
 
     @Autowired
     private HeightRepository heightRepository;
@@ -29,7 +29,7 @@ public class HeightController {
     @GetMapping("add")
     public String displayAddHeightForm(Model model) {
         model.addAttribute(new Height());
-        return "templates.month/add";
+        return "height/add";
     }
 
     @PostMapping("add")

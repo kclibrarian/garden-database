@@ -1,7 +1,7 @@
-package controllers;
+package com.portfolio.gardendatabase.controllers;
 
-import data.ColorRepository;
-import model.Color;
+import com.portfolio.gardendatabase.data.ColorRepository;
+import com.portfolio.gardendatabase.models.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,14 +17,11 @@ import java.util.Optional;
 public class ColorController {
 
     @Autowired
-    private ColorController colorController;
-
-    @Autowired
     private ColorRepository colorRepository;
 
     @GetMapping("")
     public String index(Model model) {
-        model.addAttribute("color", colorRepository.findAll());
+        model.addAttribute("colors", colorRepository.findAll());
         return "colors/index";
     }
 
@@ -42,7 +39,7 @@ public class ColorController {
             return "colors/add";
         }
         colorRepository.save(newColor);
-        model.addAttribute("color", colorRepository.findAll());
+        model.addAttribute("colors", colorRepository.findAll());
         return "redirect:";
     }
 

@@ -1,4 +1,4 @@
-package model;
+package com.portfolio.gardendatabase.models;
 
 import java.util.ArrayList;
 
