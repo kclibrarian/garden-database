@@ -69,7 +69,7 @@ public class HomeController {
         newPlant.setMonth(month);
 
 
-        return "redirect:";
+        return "redirect";
 
 
 
