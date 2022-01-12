@@ -1,9 +1,9 @@
 package com.portfolio.gardendatabase.controllers;
 
-import com.portfolio.gardendatabase.data.ColorRepository;
-import com.portfolio.gardendatabase.data.HeightRepository;
-import com.portfolio.gardendatabase.data.MonthRepository;
-import com.portfolio.gardendatabase.data.PlantRepository;
+import com.portfolio.gardendatabase.models.data.ColorRepository;
+import com.portfolio.gardendatabase.models.data.HeightRepository;
+import com.portfolio.gardendatabase.models.data.MonthRepository;
+import com.portfolio.gardendatabase.models.data.PlantRepository;
 import com.portfolio.gardendatabase.models.Plant;
 import com.portfolio.gardendatabase.models.PlantData;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.portfolio.gardendatabase.controllers;
 
-import com.portfolio.gardendatabase.data.HeightRepository;
 import com.portfolio.gardendatabase.models.Height;
+import com.portfolio.gardendatabase.models.data.HeightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,5 @@
-package com.portfolio.gardendatabase.data;
+package com.portfolio.gardendatabase.models.data;
+
 
 import com.portfolio.gardendatabase.models.Height;
 import org.springframework.data.repository.CrudRepository;

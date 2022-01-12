@@ -1,12 +1,13 @@
 package com.portfolio.gardendatabase.controllers;
 
-import com.portfolio.gardendatabase.data.ColorRepository;
-import com.portfolio.gardendatabase.data.HeightRepository;
-import com.portfolio.gardendatabase.data.MonthRepository;
-import com.portfolio.gardendatabase.data.PlantRepository;
+
 import com.portfolio.gardendatabase.models.Color;
 import com.portfolio.gardendatabase.models.Month;
 import com.portfolio.gardendatabase.models.Plant;
+import com.portfolio.gardendatabase.models.data.ColorRepository;
+import com.portfolio.gardendatabase.models.data.HeightRepository;
+import com.portfolio.gardendatabase.models.data.MonthRepository;
+import com.portfolio.gardendatabase.models.data.PlantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,7 +55,7 @@ public class HomeController {
 
     @PostMapping("add")
     public String processAddPlantForm(@ModelAttribute @Valid Plant newPlant,
-                                    Errors errors, Model model, @RequestParam int monthId, @RequestParam List<Integer> colors) {
+                                      Errors errors, Model model, @RequestParam int monthId, @RequestParam List<Integer> colors) {
 
 
 
