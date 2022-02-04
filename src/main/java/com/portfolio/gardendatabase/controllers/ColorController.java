@@ -1,6 +1,6 @@
 package com.portfolio.gardendatabase.controllers;
 
-import com.portfolio.gardendatabase.models.data.ColorRepository;
+import com.portfolio.gardendatabase.data.ColorRepository;
 import com.portfolio.gardendatabase.models.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

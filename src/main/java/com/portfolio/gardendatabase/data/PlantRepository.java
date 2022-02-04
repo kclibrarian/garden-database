@@ -1,4 +1,4 @@
-package com.portfolio.gardendatabase.models.data;
+package com.portfolio.gardendatabase.data;
 
 import com.portfolio.gardendatabase.models.Plant;
 import org.springframework.data.repository.CrudRepository;
